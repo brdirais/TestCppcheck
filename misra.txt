@@ -1,0 +1,327 @@
+Appendix A Summary of guidelines
+
+Rule 1.1 Required
+All code shall conform to ISO/IEC 9899:1990 “Programming languages — C”, amended and corrected by ISO/IEC 9899/COR1:1995, ISO/IEC 9899/AMD1:1995, and ISO/IEC 9899/COR2:1996
+
+Rule 1.2 Required
+No reliance shall be placed on undefined or unspecified behaviour.
+
+Rule 1.3 Required
+Multiple compilers and/or languages shall only be used if there is a common defined interface standard for object code to which the languages/compilers/assemblers conform.
+
+Rule 1.4 Required
+The compiler/linker shall be checked to ensure that 31 character significance and case sensitivity are supported for external identifiers.
+
+Rule 1.5 Advisory
+Floating-point implementations should comply with a defined floating-point standard.
+
+Rule 2.1 Required
+Assembly language shall be encapsulated and isolated.
+
+Rule 2.2 Required
+Source code shall only use /* ... */ style comments.
+
+Rule 2.3 Required
+The character sequence /* shall not be used within a comment.
+
+Rule 2.4 Advisory
+Sections of code should not be “commented out”.
+
+Rule 3.1 Required
+All usage of implementation-defined behaviour shall be documented.
+
+Rule 3.2 Required 
+The character set and the corresponding encoding shall be documented.
+
+Rule 3.3 Advisory
+The implementation of integer division in the chosen compiler should be determined, documented and taken into account.
+Rule 3.4 Required
+All uses of the #pragma directive shall be documented and explained.
+
+Rule 3.5 Required
+The implementation defined behaviour and packing of bitfields shall be documented if being relied upon.
+
+Rule 3.6 Required
+All libraries used in production code shall be written to comply with the provisions of this document, and shall have been subject to appropriate validation. 
+
+Rule 4.1 Required
+Only those escape sequences that are defined in the ISO C standard shall be used.
+
+Rule 4.2 Required
+Trigraphs shall not be used.
+
+Rule 5.1 Required
+Identifiers (internal and external) shall not rely on the significance of more than 31 characters.
+
+Rule 5.2 Required
+Identifiers in an inner scope shall not use the same name as an identifier in an outer scope, and therefore hide that identifier.
+
+Rule 5.3 Required
+A typedef name shall be a unique identifier.
+
+Rule 5.4 Required
+A tag name shall be a unique identifier.
+
+Rule 5.5 Advisory
+No object or function identifier with static storage duration should be reused.
+
+Rule 5.6 Advisory
+No identifier in one name space should have the same spelling as an identifier in another name space, with the exception of structure member and union member names.
+
+Rule 5.7 Advisory
+No identifier name should be reused.
+
+Rule 6.1 Required
+The plain char type shall be used only for storage and use of character values.
+
+Rule 6.2 Required
+signed and unsigned char type shall be used only for the storage and use of numeric values.
+Rule 6.3 Advisory
+typedefs that indicate size and signedness should be used in place of the basic numerical types.
+Rule 6.4 Required 
+Bit fields shall only be defined to be of type unsigned int or signed int.
+Rule 6.5 Required
+Bit fields of signed type shall be at least 2 bits long.
+Rule 7.1 Required
+Octal constants (other than zero) and octal escape sequences shall not be used.
+Rule 8.1 Required
+Functions shall have prototype declarations and the prototype shall be visible at both the function definition and call.
+Rule 8.2 Required
+Whenever an object or function is declared or defined, its type shall be explicitly stated.
+Rule 8.3 Required
+For each function parameter the type given in the declaration and definition shall be identical, and the return types shall also be identical.
+Rule 8.4 Required
+If objects or functions are declared more than once their types shall be compatible.
+Rule 8.5 Required
+There shall be no definitions of objects or functions in a header file.
+Rule 8.6 Required
+Functions shall be declared at file scope.
+Rule 8.7 Required
+Objects shall be defined at block scope if they are only accessed from within a single function.
+Rule 8.8 Required
+An external object or function shall be declared in one and only one file.
+Rule 8.9 Required
+An identifier with external linkage shall have exactly one external definition.
+Rule 8.10 Required
+All declarations and definitions of objects or functions at file scope shall have internal linkage unless external linkage is required.
+Rule 8.11 Required
+The static storage class specifier shall be used in definitions and declarations of objects and functions that have internal linkage.
+Rule 8.12 Required
+When an array is declared with external linkage, its size shall be stated explicitly or defined implicitly by initialisation.
+Rule 9.1 Required
+Rule 9.2 Required
+Rule 9.3 Required
+All automatic variables shall have been assigned a value before being used.
+Braces shall be used to indicate and match the structure in the non-zero initialisation of arrays and structures.
+In an enumerator list, the “ = ” construct shall not be used to explicitly initialise members other than the first, unless all items are explicitly initialised.
+Rule 10.1 Required
+The value of an expression of integer type shall not be implicitly converted to a different underlying type.
+Rule 10.2 Required
+(a) it is not a conversion to a wider integer type of the same signedness, or
+(b) the expression is complex, or
+(c) the expression is not constant and is a function argument, or
+(d) the expression is not constant and is a return expression
+The value of an expression of floating type shall not be implicitly converted to a different type if:
+(a) it is not a conversion to a wider floating type, or
+(b) the expression is complex, or
+(c) the expression is a function argument, or
+(d) the expression is a return expression
+Rule 10.3 Required
+The value of a complex expression of integer type shall only be cast to a type of the same signedness that is no wider than the underlying type of the expression.
+Rule 10.4 Required
+The value of a complex expression of floating type shall only be cast to a floating type that is narrower or of the same size.
+Rule 10.5 Required
+If the bitwise operators ~ and << are applied to an operand of underlying type unsigned char or unsigned short, the result shall be immediately cast to the underlying type of the operand.
+Rule 10.6 Required
+A “ U ” suffix shall be applied to all constants of unsigned type.
+Pointer type conversions
+Rule 11.1 Required
+Conversions shall not be performed between a pointer to a function and any type other than an integral type.
+Rule 11.2 Required
+Conversions shall not be performed between a pointer to object and any type other than an integral type, another pointer to object type or a pointer to void.
+Rule 11.3 Advisory
+A cast should not be performed between a pointer type and an integral type.
+Rule 11.4 Advisory
+A cast should not be performed between a pointer to object type and a different pointer to object type.
+Rule 11.5 Required
+A cast shall not be performed that removes any const or volatile qualification from the type addressed by a pointer.
+Rule 12.1 Advisory
+Limited dependence should be placed on C’s operator precedence rules in expressions.
+Rule 12.2 Required
+The value of an expression shall be the same under any order of evaluation that the standard permits.
+Rule 12.3 Required
+The sizeof operator shall not be used on expressions that contain side effects.
+Rule 12.4 Required
+The right-hand operand of a logical && or || operator shall not contain side effects.
+Rule 12.5 Required
+The operands of a logical && or || shall be primary‐expressions.
+Rule 12.6 Advisory
+The operands of logical operators ( && , || and ! ) should be effectively Boolean.
+Expressions that are effectively Boolean should not be used as operands to operators other than ( && , || , ! , = , == , != and ?: ).
+Rule 12.7 Required
+Bitwise operators shall not be applied to operands whose underlying type is signed.
+Rule 12.8 Required
+The right-hand operand of a shift operator shall lie between zero and one less than the width in bits of the underlying type of the left-hand operand.
+Rule 12.9 Required
+The unary minus operator shall not be applied to an expression whose underlying type is unsigned.
+Rule 12.10 Required
+The comma operator shall not be used.
+Rule 12.11 Advisory
+Evaluation of constant unsigned integer expressions should not lead to wrap-around.
+Rule 12.12 Required
+The underlying bit representations of floating-point values shall not be used.
+Rule 12.13 Advisory
+The increment ( ++ ) and decrement ( -- ) operators should not be mixed with other operators in an expression.
+Rule 13.1 Required
+Assignment operators shall not be used in expressions that yield a Boolean value.
+Rule 13.2 Advisory
+Tests of a value against zero should be made explicit, unless the operand is effectively Boolean.
+Rule 13.3 Required
+Floating-point expressions shall not be tested for equality or inequality.
+Rule 13.4 Required
+The controlling expression of a for statement shall not contain any objects of floating type.
+Rule 13.5 Required
+The three expressions of a for statement shall be concerned only with loop control.
+Rule 13.6 Required
+Numeric variables being used within a for loop for iteration counting shall not be modified in the body of the loop.
+Rule 13.7 Required
+Boolean operations whose results are invariant shall not be permitted.
+Rule 14.1 Required
+There shall be no unreachable code.
+Rule 14.2 Required
+All non-null statements shall either
+(a) have at least one side-effect however executed, or
+(b) cause control flow to change.
+Rule 14.3 Required
+Before preprocessing, a null statement shall only occur on a line by itself; it may be followed by a comment provided that the first character following the null statement is a white‐space character.
+Rule 14.4 Required
+The goto statement shall not be used.
+Rule 14.5 Required
+The continue statement shall not be used.
+Rule 14.6 Required
+For any iteration statement there shall be at most one break statement used for loop termination.
+Rule 14.7 Required
+A function shall have a single point of exit at the end of the function.
+Rule 14.8 Required
+The statement forming the body of a switch, while, do ... while or for statement shall be a compound statement.
+Rule 14.9 Required
+An if (expression) construct shall be followed by a compound statement. The else keyword shall be followed by either a compound statement, or another if statement.
+Rule 14.10 Required
+All if ... else if constructs shall be terminated with an else clause.
+Rule 15.0 Required
+The MISRA C switch syntax shall be used.
+Rule 15.1 Required
+A switch label shall only be used when the most closely-enclosing compound statement is the body of a switch statement.
+Rule 15.2 Required
+An unconditional break statement shall terminate every non‐empty switch clause.
+Rule 15.3 Required
+The final clause of a switch statement shall be the default clause.
+Rule 15.4 Required
+A switch expression shall not represent a value that is effectively Boolean.
+Rule 15.5 Required
+Every switch statement shall have at least one case clause.
+Rule 16.1 Required
+Functions shall not be defined with variable numbers of arguments.
+Rule 16.2 Required
+Functions shall not call themselves, either directly or indirectly.
+Rule 16.3 Required
+Identifiers shall be given for all of the parameters in a function prototype declaration.
+Rule 16.4 Required
+The identifiers used in the declaration and definition of a function shall be identical.
+Rule 16.5 Required
+Functions with no parameters shall be declared and defined with the parameter list void.
+Rule 16.6 Required
+The number of arguments passed to a function shall match the number of parameters.
+Rule 16.7 Advisory
+A pointer parameter in a function prototype should be declared as pointer to const if the pointer is not used to modify the addressed object.
+Rule 16.8 Required
+All exit paths from a function with non-void return type shall have an explicit return statement with an expression.
+Rule 16.9 Required
+A function identifier shall only be used with either a preceding & , or with a parenthesised parameter list, which may be empty.
+Rule 16.10 Required
+If a function returns error information, then that error information shall be tested.
+Rule 17.1 Required
+Pointer arithmetic shall only be applied to pointers that address an array or array element.
+Rule 17.2 Required
+Pointer subtraction shall only be applied to pointers that address elements of the same array.
+Rule 17.3 Required
+> , >= , < , <=
+same array shall not be applied to pointer types except where they point to the 
+Rule 17.4 Required
+Array indexing shall be the only allowed form of pointer arithmetic.
+Rule 17.5 Advisory
+The declaration of objects should contain no more than 2 levels of pointer indirection.
+Rule 17.6 Required
+The address of an object with automatic storage shall not be assigned to another object that may persist after the first object has ceased to exist.
+Rule 18.1 Required
+All structure or union types shall be complete at the end of a translation unit.
+Rule 18.2 Required
+An object shall not be assigned to an overlapping object.
+Rule 18.3 Required
+An area of memory shall not be reused for unrelated purposes.
+Rule 18.4 Required
+Unions shall not be used.
+Rule 19.1 Advisory
+#include statements in a file should only be preceded by other preprocessor directives or comments.
+Rule 19.2 Advisory
+Non-standard characters should not occur in header file names in #include directives.
+Rule 19.3 Required
+The #include directive shall be followed by either a <filename> or "filename" sequence.
+Rule 19.4 Required
+C macros shall only expand to a braced initialiser, a constant, a string literal, a parenthesised expression, a type qualifier, a storage class specifier, or a do-while-zero construct.
+Rule 19.5 Required
+Macros shall not be #define’d or #undef’d within a block.
+Rule 19.6 Required
+#undef shall not be used.
+Rule 19.7 Advisory
+A function should be used in preference to a function-like macro.
+Rule 19.8 Required
+A function-like macro shall not be invoked without all of its arguments.
+Rule 19.9 Required
+Arguments to a function-like macro shall not contain tokens that look like preprocessing directives.
+Rule 19.10 Required
+In the definition of a function-like macro each instance of a parameter shall be enclosed in parentheses unless it is used as the operand of # or ## .
+Rule 19.11 Required
+All macro identifiers in preprocessor directives shall be defined before use, except in #ifdef and #ifndef preprocessor directives and the defined() operator.
+Rule 19.12 Required
+There shall be at most one occurrence of the # or ## preprocessor operators in a single macro definition.
+Rule 19.13 Advisory
+The # and ## preprocessor operators should not be used.
+Rule 19.14 Required
+The defined preprocessor operator shall only be used in one of the two standard forms.
+Rule 19.15 Required
+Precautions shall be taken in order to prevent the contents of a header file being included twice.
+Rule 19.16 Required
+Preprocessing directives shall be syntactically meaningful even when excluded by the preprocessor.
+Rule 19.17 Required
+All #else, #elif and #endif preprocessor directives shall reside in the same file as the #if or #ifdef directive to which they are related.
+Rule 20.1 Required
+Reserved identifiers, macros and functions in the standard library, shall not be defined, redefined or undefined.
+Rule 20.2 Required
+The names of standard library macros, objects and functions shall not be reused.
+Rule 20.3 Required
+The validity of values passed to library functions shall be checked.
+Rule 20.4 Required
+Dynamic heap memory allocation shall not be used.
+Rule 20.5 Required
+The error indicator errno shall not be used.
+Rule 20.6 Required
+The macro offsetof, in library <stddef.h>, shall not be used.
+Rule 20.7 Required
+The setjmp macro and the longjmp function shall not be used.
+Rule 20.8 Required
+The signal handling facilities of <signal.h> shall not be used.
+Rule 20.9 Required
+The input/output library <stdio.h> shall not be used in production code.
+Rule 20.10 Required
+The library functions atof, atoi and atol from library <stdlib.h> shall not be used.
+Rule 20.11 Required
+The library functions abort, exit, getenv and system from library <stdlib.h> shall not be used.
+Rule 20.12 Required
+The time handling functions of library <time.h> shall not be used.
+Rule 21.1 Required
+Minimisation of run-time failures shall be ensured by the use of at least one of 
+(a) static analysis tools/techniques;
+(b) dynamic analysis tools/techniques;
+(c) explicit coding of checks to handle run-time faults.
+
